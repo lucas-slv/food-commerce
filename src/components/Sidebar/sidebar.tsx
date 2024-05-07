@@ -9,14 +9,14 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export function Sidebar() {
-   const [menuOpen, setMenuOpen] = useState(false);
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
    function handleToggleMenu() {
-      setMenuOpen(!menuOpen);
+      setIsMenuOpen(!isMenuOpen);
    }
 
    return (
-      <Container isMenuOpen={menuOpen}>
+      <Container isMenuOpen={isMenuOpen}>
          <button type='button' onClick={handleToggleMenu}>
             <img src={MenuIcon} alt='Icone para abrir o menu' />
          </button>

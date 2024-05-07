@@ -14,8 +14,7 @@ export const Container = styled.aside<ContainerProps>`
            `
          : css`
               width: 7.75rem;
-           `
-   }
+           `}
 
    transition: width 0.3s linear;
 
