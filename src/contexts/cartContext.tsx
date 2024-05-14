@@ -1,7 +1,9 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import { SnackData } from "../types/SnackData";
+import { snackEmoji } from "../helpers/snackEmoji";
+import { toastMessage } from "../helpers/toastMessage";
 
-interface Snack extends SnackData {
+export interface Snack extends SnackData {
    quantity: number;
    subtotal: number;
 }
@@ -50,16 +52,20 @@ export function CartProvider({ children }: CartProviderProps) {
             return item;
          });
 
-         console.log("newCart Update", newCart);
-         setCart(newCart);
+         toastMessage(
+            `Mais um(a) ${snackEmoji(snack.snack)}`,
+            snack.name,
+            "adicionado aos pedidos!",
+         );
 
+         setCart(newCart);
          return;
       }
 
       const newSnack = { ...snack, quantity: 1, subtotal: snack.price };
       const newCart = [...cart, newSnack];
-      console.log("newCart Addition:", newCart);
 
+      toastMessage(snackEmoji(snack.snack), snack.name, "Foi adicionado(a) aos pedidos!");
       setCart(newCart);
    }
 

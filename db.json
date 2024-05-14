@@ -2,7 +2,7 @@
    "burgers": [
       {
          "id": 1,
-         "snack": "burguer",
+         "snack": "burger",
          "name": "Double",
          "image": "https://i.imgur.com/nERRB9n.jpg",
          "description": "Já pensou em comer aquele sanduíche com carne dupla e saborosa, recheada com queijo, molho e salada? Então você pensou exatamente nesse hambúrguer.",
@@ -10,7 +10,7 @@
       },
       {
          "id": 2,
-         "snack": "burguer",
+         "snack": "burger",
          "name": "Mega",
          "image": "https://img.freepik.com/fotos-gratis/hamburguer-de-carne-grelhada-no-pao-com-queijo-tomate-e-cebola-gerado-por-inteligencia-artificial_25030-63156.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1711929600&semt=ais",
          "description": "O Mega Burger é um hambúrguer suculento com carne grelhada, queijo derretido, bacon crocante e vegetais frescos",
@@ -18,7 +18,7 @@
       },
       {
          "id": 3,
-         "snack": "burguer",
+         "snack": "burger",
          "name": "X-Salada",
          "image": "https://s2-receitas.glbimg.com/Td050XeFMOBB7XFeJigA5voIlvE=/0x0:1200x675/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2024/7/K/ehv3mfQjmY0VivlyFd8g/x-salada-classico.jpg",
          "description": "O X-Salada traz uma explosão de sabor com carne grelhada, queijo derretido, vegetais frescos e um toque especial de molho, tudo entre dois pães macios.",
@@ -26,7 +26,7 @@
       },
       {
          "id": 4,
-         "snack": "burguer",
+         "snack": "burger",
          "name": "X-Bacon",
          "image": "https://www.sabornamesa.com.br/media/k2/items/cache/5098e75e57e36807c173cb7490b1b0d2_XL.jpg",
          "description": "Criado para os amantes de bacon, possui em todas as suas camadas bacon bem assado e ainda queijo e carne.",
@@ -34,7 +34,7 @@
       },
       {
          "id": 5,
-         "snack": "burguer",
+         "snack": "burger",
          "name": "Double Chicken",
          "image": "https://thumbs.dreamstime.com/b/big-grilled-chicken-burger-double-cutlet-cheese-wooden-background-side-view-close-up-208658240.jpg",
          "description": "O Double Chicken oferece o dobro de sabor com duas camadas de frango grelhado, queijo derretido, bacon crocante, vegetais frescos e um molho especial, tudo em um pão macio e tostado.",
