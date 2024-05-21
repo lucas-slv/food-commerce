@@ -5,6 +5,7 @@ import { Burgers } from "./pages/MainPage/Burgers/burgers";
 import { Pizzas } from "../src/pages/MainPage/Pizzas/pizzas";
 import { Drinks } from "./pages/MainPage/Drinks/drinks";
 import { IceCreams } from "./pages/MainPage/IceCreams/Ice-creams";
+import { MyCart } from "./pages/MyCart/my_cart";
 
 export function AppRoutes() {
    return (
@@ -15,6 +16,7 @@ export function AppRoutes() {
             <Route path='drinks' element={<Drinks />} />
             <Route path='ice-creams' element={<IceCreams />} />
          </Route>
+         <Route path='cart' element={<MyCart />} />
       </Routes>
    );
 }
