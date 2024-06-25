@@ -11,13 +11,19 @@
       "json-server": "json-server --watch db.json --port 5000"
    },
    "dependencies": {
+      "@brazilian-utils/brazilian-utils": "^1.0.0-rc.12",
+      "@hookform/resolvers": "^3.6.0",
       "axios": "^1.6.8",
+      "card-validator": "^10.0.0",
       "polished": "^4.3.1",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
+      "react-hook-form": "^7.52.0",
       "react-icons": "^5.1.0",
+      "react-imask": "^7.6.1",
       "react-router-dom": "^6.22.3",
-      "sonner": "^1.4.41"
+      "sonner": "^1.4.41",
+      "yup": "^1.4.0"
    },
    "devDependencies": {
       "@svgr/plugin-jsx": "^8.1.0",

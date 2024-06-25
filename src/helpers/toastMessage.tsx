@@ -13,5 +13,6 @@ export function toastMessage(snack: string, name: string, message: string) {
       },
       position: "top-right",
       icon: <FaCheckCircle color='#23DB42' size={25} />,
+      closeButton: true,
    });
 }

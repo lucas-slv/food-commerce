@@ -1,6 +1,6 @@
 // snackContext.tsx
 import React, { createContext, useEffect, useState } from "react";
-import { SnackData } from "../types/SnackData";
+import { SnackData } from "../interfaces/SnackData";
 
 interface SnackContextProps {
    burgers: SnackData[];

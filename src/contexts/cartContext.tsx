@@ -1,7 +1,9 @@
 import React, { createContext, useState } from "react";
-import { SnackData } from "../types/SnackData";
+import { SnackData } from "../interfaces/SnackData";
 import { snackEmoji } from "../helpers/snackEmoji";
 import { toastMessage } from "../helpers/toastMessage";
+import { useNavigate } from "react-router-dom";
+import { CustomerData } from "../interfaces/CustomerData";
 
 export interface Snack extends SnackData {
    quantity: number;
@@ -14,7 +16,8 @@ interface CartContextProps {
    removeSnackFromCart: (snack: Snack) => void;
    snackCartIncrement: (snack: Snack) => void;
    snackCartDecrement: (snack: Snack) => void;
-   // confirmOrder: () => void;
+   confirmOrder: () => void;
+   payOrder: (customer: CustomerData) => void;
 }
 
 interface CartProviderProps {
@@ -24,6 +27,7 @@ interface CartProviderProps {
 export const CartContext = createContext({} as CartContextProps);
 
 export function CartProvider({ children }: CartProviderProps) {
+   const navigate = useNavigate();
    const [cart, setCart] = useState<Snack[]>([]);
 
    function addSnackIntoCart(snack: SnackData): void {
@@ -96,7 +100,15 @@ export function CartProvider({ children }: CartProviderProps) {
       updateSnackQuantity(snack, snack.quantity - 1);
    }
 
-   // function confirmOrder() {}
+   function confirmOrder() {
+      navigate("/payment");
+   }
+
+   function payOrder(customer: CustomerData) {
+      console.log("payOrder", cart, customer);
+      // Chamada de API para o backend
+      return;
+   }
 
    return (
       <CartContext.Provider
@@ -106,7 +118,8 @@ export function CartProvider({ children }: CartProviderProps) {
             removeSnackFromCart,
             snackCartIncrement,
             snackCartDecrement,
-            // confirmOrder,
+            confirmOrder,
+            payOrder,
          }}
       >
          {children}

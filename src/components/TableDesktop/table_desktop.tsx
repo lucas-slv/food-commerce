@@ -4,7 +4,7 @@ import { Container } from "./styles";
 import { FaTrashAlt } from "react-icons/fa";
 import PlusIcon from "../../assets/circle-plus.svg?react";
 import MinusIcon from "../../assets/circle-minus.svg?react";
-import { ConfirmOrder } from "../ConfirmOrder/confirm_order";
+import { ConfirmOrder } from "../OrderCloseAction/ConfirmOrder/confirm_order";
 
 export function TableDesktop() {
    const { cart, snackCartDecrement, snackCartIncrement, removeSnackFromCart } = useCart();
@@ -24,7 +24,7 @@ export function TableDesktop() {
 
             <tbody>
                {cart.map((item) => (
-                  <tr>
+                  <tr key={`${item.snack}-${item.id}`}>
                      <td>
                         <img src={item.image} alt={item.name} />
                      </td>
