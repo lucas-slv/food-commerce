@@ -70,7 +70,6 @@ export const Container = styled.div`
 
                span {
                   display: block;
-                  /* background: ${({ theme }) => theme.colors.white}; */
                   padding: 0.125rem 0.75rem;
                   border-radius: 4px;
 

@@ -26,9 +26,23 @@ interface CartProviderProps {
 
 export const CartContext = createContext({} as CartContextProps);
 
+const localStorageKey = "@FoodCommerce:cart";
+
 export function CartProvider({ children }: CartProviderProps) {
    const navigate = useNavigate();
-   const [cart, setCart] = useState<Snack[]>([]);
+   const [cart, setCart] = useState<Snack[]>(() => {
+      const snacksIntoCart = localStorage.getItem(localStorageKey);
+      if (snacksIntoCart) {
+         return JSON.parse(snacksIntoCart);
+      }
+
+      return [];
+   });
+
+   function saveCart(items: Snack[]) {
+      setCart(items);
+      localStorage.setItem(localStorageKey, JSON.stringify(items));
+   }
 
    function addSnackIntoCart(snack: SnackData): void {
       const snackExistentInCart = cart.find(
@@ -53,21 +67,21 @@ export function CartProvider({ children }: CartProviderProps) {
             "adicionado aos pedidos!",
          );
 
-         setCart(newCart);
+         saveCart(newCart);
+
          return;
       }
-
       const newSnack = { ...snack, quantity: 1, subtotal: snack.price };
       const newCart = [...cart, newSnack];
 
       toastMessage(snackEmoji(snack.snack), snack.name, "Foi adicionado(a) aos pedidos!");
-      setCart(newCart);
+      saveCart(newCart);
    }
 
    function removeSnackFromCart(snack: Snack) {
       const newCart = cart.filter((item) => !(item.id === snack.id && item.snack === snack.snack));
 
-      setCart(newCart);
+      saveCart(newCart);
    }
 
    function updateSnackQuantity(snack: Snack, newQuantity: number) {
@@ -89,7 +103,7 @@ export function CartProvider({ children }: CartProviderProps) {
 
          return item;
       });
-      setCart(newCart);
+      saveCart(newCart);
    }
 
    function snackCartIncrement(snack: Snack) {
@@ -104,9 +118,16 @@ export function CartProvider({ children }: CartProviderProps) {
       navigate("/payment");
    }
 
-   function payOrder(customer: CustomerData) {
+   function clearCart() {
+      localStorage.removeItem(localStorageKey);
+   }
+
+   function payOrder(customer: CustomerData) {  // <-- to be developed together with backend
       console.log("payOrder", cart, customer);
-      // Chamada de API para o backend
+
+      // Chamada de API para o backend.
+      
+      clearCart(); // deve ser executado após retorno positivo da API.
       return;
    }
 

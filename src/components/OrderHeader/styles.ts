@@ -12,7 +12,6 @@ export const Container = styled.header`
    }
 
    > div {
-      /* border: solid 1px red; */
       display: flex;
       align-items: center;
 
