@@ -49,7 +49,7 @@ Clone o projeto
 Entre no diretório do projeto
 
 ```bash
-  cd my-project
+  cd food-commerce
 ```
 
 Instale as dependências
